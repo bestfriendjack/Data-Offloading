@@ -8,19 +8,19 @@ import java.util.Date;
 
 public class Handler {
 
-	public static void main(String[] args) throws ClassNotFoundException
+	public void addToDB(int addId, String addFileName, String addFilePath, long addFileSize, String addFileType, String addDTNAddr, String addMACAddr) throws ClassNotFoundException
     {
 		
 		// Create FileMetadata
 		// TODO Need to get from parser
 		FileMetadata data = new FileMetadata();
-		int id = 1;
-		String fileName = "'Name'";
-		String filePath = "'/DOC/MAIN/PATH'";
-		int fileSize = 10;
-		String fileType = "'mp3'";
-		String DTNAddr = "'DTN://jack'";
-		String MACAddr = "'AD:PQ:48:9P'";
+		int id = addId;
+		String fileName = addFileName;
+		String filePath = addFilePath;
+		long fileSize = addFileSize;
+		String fileType = addFileType;
+		String DTNAddr = addDTNAddr;
+		String MACAddr = addMACAddr;
 		
 		// load the sqlite-JDBC driver using the current class loader
 					Class.forName("org.sqlite.JDBC");
