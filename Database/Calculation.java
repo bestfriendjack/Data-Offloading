@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 public class Calculation {
 	@SuppressWarnings("deprecation")
-	public Time estimatedTime() throws ClassNotFoundException{
+	public Time estimatedTimeToTerminal() throws ClassNotFoundException{
 
 		// Initialize time variable to store terminal time
 		Time time = new Time();
