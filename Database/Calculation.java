@@ -1,50 +1,94 @@
-import java.util.*;
+import java.util.Date;
 import java.sql.ResultSet;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 
 public class Calculation {
-	public Time estimatedTime(Time input, Date current){
-		// Get the current time from input
-		Date date = new Date();
-		Time time = new Time();
-		date.setHours((int)input.getHour());
-		date.setMinutes((int)input.getMinute());
-		
-		// Check date
-		//System.out.println("Date is "+date.getHours()+":"+date.getMinutes());
-		
-		// Set the time format
-		//DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
-		
-		long diffMinute = date.getMinutes() - current.getMinutes();
-		long diffHour = date.getHours() - current.getHours();
-		
-		if(diffMinute<0){
-			diffMinute = 60+diffMinute;
-			diffHour = diffHour-1;
-		}
-		//System.out.println(diffMinute);
-		time.setMinute(diffMinute);
-		if(diffHour<0){
-			diffHour = 24+diffHour;
-		}
-		//System.out.println(diffHour);
-		time.setHour(diffHour);
-		
-		
-		// Check time different
-		System.out.println("Time diff: "+time.getHour()+":"+time.getMinute());
+	@SuppressWarnings("deprecation")
+	public Time estimatedTime() throws ClassNotFoundException{
 
-		return time;
+		// Initialize time variable to store terminal time
+		Time time = new Time();
+		Time difference = new Time();
+		
+		// load the sqlite-JDBC driver using the current class loader
+		  Class.forName("org.sqlite.JDBC");
+
+		      Connection connection = null;
+		      try
+		      {
+		  // create a database connection
+		  connection = DriverManager.getConnection("jdbc:sqlite:tables.db");
+		  Statement statement = connection.createStatement();
+		  statement.setQueryTimeout(30);  // set timeout to 30 sec.
+		  
+		  // Query for time to terminal
+		  ResultSet rs = statement.executeQuery("select Hour, Minute from TimeTable where IsTerminal");
+		   
+		  while(rs.next()){
+			 
+			  // Put the time of terminal to time variable
+			  time.setHour(rs.getInt("Hour"));
+			  time.setMinute(rs.getInt("Minute"));
+			  
+			  // Check time variable
+			  //System.out.println("Terminal time is "+time.getHour()+":"+time.getMinute());
+			  
+			  // Get the current time
+			  Date date = new Date();
+			  
+			  // Check date
+			  // System.out.println("Current date is "+date.getHours()+":"+date.getMinutes());
+			  
+			  // Calculate difference in minutes and hours
+			  long diffMinute = time.getMinute() - date.getMinutes();
+			  long diffHour = time.getHour() - date.getHours();
+			  
+			  // Convert the hours and minutes
+				if(diffMinute<0){
+					diffMinute = 60+diffMinute;
+					diffHour = diffHour-1;
+				}
+				//System.out.println("Minute difference: "+diffMinute);
+				difference.setMinute(diffMinute);
+				if(diffHour<0){
+					diffHour = 24+diffHour;
+				}
+				//System.out.println("Hour difference: "+diffHour);
+				difference.setHour(diffHour);
+				
+				
+				// Check time different
+				// System.out.println("Time difference: "+difference.getHour()+":"+difference.getMinute());
+		  }
+		  
+		      }
+				catch(SQLException e)
+				{
+				 // if the error message is "out of memory", 
+				 // it probably means no database file is found
+				 System.err.println(e.getMessage());
+				}
+				finally
+				{
+				 try
+				 {
+				   if(connection != null)
+				     connection.close();
+				 }
+				 catch(SQLException e)
+				 {
+				   // connection close failed.
+				   System.err.println(e);
+				 }
+				}
+		      
+		      return difference;
 	}
+	
 	public Time estimatedTransfer(long size, long speed){
 		Time time = new Time();
 		long transferTime = size/speed;
@@ -52,6 +96,7 @@ public class Calculation {
 		time.setMinute((transferTime/60));
 		return time;
 	}
+	
 	public long totalTime(Time time1, Time time2, Time time3){
 		Time time4 = new Time();
 		time4.setHour(time1.getHour()+time2.getHour()+time3.getHour());
@@ -59,6 +104,7 @@ public class Calculation {
 		long total = (time4.getHour()*60)+time4.getMinute();
 		return total;
 	}
+	
 	public long totalTransfer(Time time1, Time time2){
 		Time time3 = new Time();
 		time3.setHour(time1.getHour()+time2.getHour());
@@ -66,6 +112,5 @@ public class Calculation {
 		long total = (time3.getHour()*60)+time3.getMinute();
 		return total;
 	}
+	
 }
-
-
