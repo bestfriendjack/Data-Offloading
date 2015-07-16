@@ -101,6 +101,25 @@ public class Calculation {
 		return time;
 	}
 	
+	public long estimatedTransfer(long size, long speed){
+		
+		// Size must be in byte and speed must be in byte per second
+		long transferTime = size/speed;
+		
+		return transferTime;
+	}
+	
+	public boolean isTransferGreaterNextBus(Time time, long size, long speed){
+		long timeInSecond = ((time.getHour()*3600)+(time.getMinute()*60));
+		long transTime = estimatedTransfer(size, speed);
+		
+		// If transfer > next bus
+		if(transTime>timeInSecond){
+			return true;
+		}
+		return false;
+	}
+	
 	public long totalTime(Time time1, Time time2, Time time3){
 		Time time4 = new Time();
 		time4.setHour(time1.getHour()+time2.getHour()+time3.getHour());
