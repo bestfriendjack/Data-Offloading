@@ -91,7 +91,11 @@ public class Calculation {
 	
 	public Time estimatedTransfer(long size, long speed){
 		Time time = new Time();
+		
+		// Size must be in byte and speed must be in byte per second
 		long transferTime = size/speed;
+		
+		// Convert second to minute and hour
 		time.setHour((transferTime/3600));
 		time.setMinute((transferTime/60));
 		return time;
