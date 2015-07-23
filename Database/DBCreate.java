@@ -1,5 +1,3 @@
-package ibrdtn.dataport;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -35,6 +33,17 @@ public class DBCreate {
  statement.executeUpdate("insert into TimeTable values(3, 'Shiraniwadai', 0, 15, 50)");
  //statement.executeUpdate("insert into TimeTable values(4, 'Ikoma', 0, 15, 46)");
  statement.executeUpdate("insert into TimeTable values(10, 'Cosmosquare', 1, 13, 30)");
+ statement.executeUpdate("insert into TimeTable values(1, 'Gakken-Nara-Tamigaoka', 1, 16, 38)");
+ //statement.executeUpdate("insert into TimeTable values(2, 'Gakken-Kita-Ikoma', 0, 16, 00)");
+ statement.executeUpdate("insert into TimeTable values(3, 'Shiraniwadai', 0, 16, 10)");
+ //statement.executeUpdate("insert into TimeTable values(4, 'Ikoma', 0, 15, 46)");
+ statement.executeUpdate("insert into TimeTable values(10, 'Cosmosquare', 1, 13, 50)");
+ statement.executeUpdate("insert into TimeTable values(1, 'Gakken-Nara-Tamigaoka', 1, 16, 58)");
+ //statement.executeUpdate("insert into TimeTable values(2, 'Gakken-Kita-Ikoma', 0, 16, 00)");
+ statement.executeUpdate("insert into TimeTable values(3, 'Shiraniwadai', 0, 16, 30)");
+ //statement.executeUpdate("insert into TimeTable values(4, 'Ikoma', 0, 15, 46)");
+ statement.executeUpdate("insert into TimeTable values(10, 'Cosmosquare', 1, 16, 10)");
+ 
  
  
  // create File table (Only blank table at first)
