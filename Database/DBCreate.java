@@ -39,7 +39,7 @@ public class DBCreate {
  
  // create File table (Only blank table at first)
  statement.executeUpdate("drop table if exists File");
- statement.executeUpdate("create table File (File_ID int, File_Name string, File_Path string, File_Size float, File_Type String, DTN_Address string, MAC_Address string, Status int)");
+ statement.executeUpdate("create table File (File_ID int PRIMARY KEY, File_Name string, File_Path string, File_Size float, File_Type String, DTN_Address string, MAC_Address string, Status int)");
  
  // Checking the data in the table
  /* ResultSet rs = statement.executeQuery("select * from TimeTable");
