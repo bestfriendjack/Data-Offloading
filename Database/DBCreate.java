@@ -45,17 +45,17 @@ public class DBCreate {
  
  // 138 Line
  // First bus
- statement.executeUpdate("insert into TimeTable values(138, 1, 1, '9:00:00')");
- statement.executeUpdate("insert into TimeTable values(138, 1, 2, '9:10:00')");
- statement.executeUpdate("insert into TimeTable values(138, 1, 3, '9:20:00')");
- statement.executeUpdate("insert into TimeTable values(138, 1, 4, '9:30:00')");
- statement.executeUpdate("insert into TimeTable values(138, 1, 5, '9:40:00')");
- statement.executeUpdate("insert into TimeTable values(138, 1, 6, '9:50:00')");
+ statement.executeUpdate("insert into TimeTable values(138, 1, 1, '09:00:00')");
+ statement.executeUpdate("insert into TimeTable values(138, 1, 2, '09:10:00')");
+ statement.executeUpdate("insert into TimeTable values(138, 1, 3, '09:20:00')");
+ statement.executeUpdate("insert into TimeTable values(138, 1, 4, '09:30:00')");
+ statement.executeUpdate("insert into TimeTable values(138, 1, 5, '09:40:00')");
+ statement.executeUpdate("insert into TimeTable values(138, 1, 6, '09:50:00')");
  statement.executeUpdate("insert into TimeTable values(138, 1, 8, '10:10:00')");
  statement.executeUpdate("insert into TimeTable values(138, 1, 10, '10:30:00')");
  
  // Second bus
- statement.executeUpdate("insert into TimeTable values(138, 2, 1, '9:50:00')");
+ statement.executeUpdate("insert into TimeTable values(138, 2, 1, '09:50:00')");
  statement.executeUpdate("insert into TimeTable values(138, 2, 2, '10:00:00')");
  statement.executeUpdate("insert into TimeTable values(138, 2, 3, '10:10:00')");
  statement.executeUpdate("insert into TimeTable values(138, 2, 4, '10:20:00')");
@@ -76,12 +76,12 @@ public class DBCreate {
  
  // 82 line
  // First bus
- statement.executeUpdate("insert into TimeTable values(82, 1, 1, '9:00:00')");
- statement.executeUpdate("insert into TimeTable values(82, 1, 2, '9:10:00')");
- statement.executeUpdate("insert into TimeTable values(82, 1, 3, '9:20:00')");
- statement.executeUpdate("insert into TimeTable values(82, 1, 4, '9:30:00')");
- statement.executeUpdate("insert into TimeTable values(82, 1, 5, '9:40:00')");
- statement.executeUpdate("insert into TimeTable values(82, 1, 6, '9:50:00')");
+ statement.executeUpdate("insert into TimeTable values(82, 1, 1, '09:00:00')");
+ statement.executeUpdate("insert into TimeTable values(82, 1, 2, '09:10:00')");
+ statement.executeUpdate("insert into TimeTable values(82, 1, 3, '09:20:00')");
+ statement.executeUpdate("insert into TimeTable values(82, 1, 4, '09:30:00')");
+ statement.executeUpdate("insert into TimeTable values(82, 1, 5, '09:40:00')");
+ statement.executeUpdate("insert into TimeTable values(82, 1, 6, '09:50:00')");
  statement.executeUpdate("insert into TimeTable values(82, 1, 11, '10:10:00')");
  statement.executeUpdate("insert into TimeTable values(82, 1, 12, '10:30:00')");
  statement.executeUpdate("insert into TimeTable values(82, 1, 13, '10:50:00')");
@@ -99,8 +99,8 @@ public class DBCreate {
  
  // 8 line
  //First bus
- statement.executeUpdate("insert into TimeTable values(82, 1, 1, '9:20:00')");
- statement.executeUpdate("insert into TimeTable values(82, 1, 2, '9:50:00')");
+ statement.executeUpdate("insert into TimeTable values(82, 1, 1, '09:20:00')");
+ statement.executeUpdate("insert into TimeTable values(82, 1, 2, '09:50:00')");
  statement.executeUpdate("insert into TimeTable values(82, 1, 5, '10:30:00')");
  statement.executeUpdate("insert into TimeTable values(82, 1, 10, '10:50:00')");
  
