@@ -65,14 +65,14 @@ public class DBCreate {
  statement.executeUpdate("insert into TimeTable values(138, 2, 10, '11:20:00')");
  
  // Third bus
- statement.executeUpdate("insert into TimeTable values(138, 1, 1, '13:00:00')");
- statement.executeUpdate("insert into TimeTable values(138, 1, 2, '13:10:00')");
- statement.executeUpdate("insert into TimeTable values(138, 1, 3, '13:20:00')");
- statement.executeUpdate("insert into TimeTable values(138, 1, 4, '13:30:00')");
- statement.executeUpdate("insert into TimeTable values(138, 1, 5, '13:40:00')");
- statement.executeUpdate("insert into TimeTable values(138, 1, 6, '13:50:00')");
- statement.executeUpdate("insert into TimeTable values(138, 1, 8, '14:10:00')");
- statement.executeUpdate("insert into TimeTable values(138, 1, 10, '14:30:00')");
+ statement.executeUpdate("insert into TimeTable values(138, 3, 1, '13:00:00')");
+ statement.executeUpdate("insert into TimeTable values(138, 3, 2, '13:10:00')");
+ statement.executeUpdate("insert into TimeTable values(138, 3, 3, '13:20:00')");
+ statement.executeUpdate("insert into TimeTable values(138, 3, 4, '13:30:00')");
+ statement.executeUpdate("insert into TimeTable values(138, 3, 5, '13:40:00')");
+ statement.executeUpdate("insert into TimeTable values(138, 3, 6, '13:50:00')");
+ statement.executeUpdate("insert into TimeTable values(138, 3, 8, '14:10:00')");
+ statement.executeUpdate("insert into TimeTable values(138, 3, 10, '14:30:00')");
  
  // 82 line
  // First bus
@@ -121,6 +121,12 @@ statement.executeUpdate("insert into TimeTable values(82, 4, 1, '13:40:00')");
 statement.executeUpdate("insert into TimeTable values(82, 4, 2, '14:10:00')");
 statement.executeUpdate("insert into TimeTable values(82, 4, 5, '14:50:00')");
 statement.executeUpdate("insert into TimeTable values(82, 4, 10, '15:10:00')");
+
+//Fifith bus
+statement.executeUpdate("insert into TimeTable values(82, 5, 1, '16:40:00')");
+statement.executeUpdate("insert into TimeTable values(82, 5, 2, '17:10:00')");
+statement.executeUpdate("insert into TimeTable values(82, 5, 5, '17:50:00')");
+statement.executeUpdate("insert into TimeTable values(82, 5, 10, '18:10:00')");
  
 
  // create File table (Only blank table at first)
