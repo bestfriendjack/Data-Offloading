@@ -52,7 +52,7 @@ public class DBCreate {
  statement.executeUpdate("insert into TimeTable values(138, 1, 5, '9:40:00')");
  statement.executeUpdate("insert into TimeTable values(138, 1, 6, '9:50:00')");
  statement.executeUpdate("insert into TimeTable values(138, 1, 8, '10:10:00')");
- statement.executeUpdate("insert into TimeTable values(138, 1, 10, '0:30:00')");
+ statement.executeUpdate("insert into TimeTable values(138, 1, 10, '10:30:00')");
  
  // Second bus
  statement.executeUpdate("insert into TimeTable values(138, 2, 1, '9:50:00')");
