@@ -65,7 +65,7 @@ public class Calculation {
 		      return time;
 	}
 	
-	public static String timeCalculateVehicle(long size, long speed) throws ClassNotFoundException{
+	public static String timeCalculateVehicle(int busLine, int busID, long size, long speed) throws ClassNotFoundException{
 		// Initialize time variable to store bus time
 		long transfer = estimatedTransfer(size, speed);
 		String time = null;
@@ -82,7 +82,7 @@ public class Calculation {
 		  statement.setQueryTimeout(30);  // set timeout to 30 sec.
 		  
 		  // Query for time to next bus to this stop
-		  ResultSet rs1 = statement.executeQuery("select Time from TimeTable AS T, Station AS S where IsTerminal AND TIME(CURRENT_TIMESTAMP,'localtime') < strftime('%H:%M',Time) ORDER BY Time");
+		  ResultSet rs1 = statement.executeQuery("select Time from TimeTable AS T JOIN Station AS S ON T.Station_ID = S.Station_ID where IsTerminal AND Bus_Line = "+busLine+" AND Bus_ID = "+busID+" AND TIME(CURRENT_TIMESTAMP,'localtime') < strftime('%H:%M',Time) ORDER BY Time");
 		   
 		  rs1.next();
 		  
