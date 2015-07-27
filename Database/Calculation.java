@@ -65,5 +65,51 @@ public class Calculation {
 		      return time;
 	}
 	
+	public static String timeCalculateVehicle(long size, long speed) throws ClassNotFoundException{
+		// Initialize time variable to store bus time
+		long transfer = estimatedTransfer(size, speed);
+		String time = null;
+		
+		// load the sqlite-JDBC driver using the current class loader
+		  Class.forName("org.sqlite.JDBC");
+
+		      Connection connection = null;
+		      try
+		      {
+		  // create a database connection
+		  connection = DriverManager.getConnection("jdbc:sqlite:tables.db");
+		  Statement statement = connection.createStatement();
+		  statement.setQueryTimeout(30);  // set timeout to 30 sec.
+		  
+		  // Query for time to next bus to this stop
+		  ResultSet rs1 = statement.executeQuery("select Time from TimeTable AS T, Station AS S where IsTerminal AND TIME(CURRENT_TIMESTAMP,'localtime') < strftime('%H:%M',Time) ORDER BY Time");
+		   
+		  rs1.next();
+		  
+		  time = rs1.getString("Time");
+		  
+		      }
+				catch(SQLException e)
+				{
+				 // if the error message is "out of memory", 
+				 // it probably means no database file is found
+				 System.err.println(e.getMessage());
+				}
+				finally
+				{
+				 try
+				 {
+				   if(connection != null)
+				     connection.close();
+				 }
+				 catch(SQLException e)
+				 {
+				   // connection close failed.
+				   System.err.println(e);
+				 }
+				}
+		      return time;
+	}
+	
 	
 }
