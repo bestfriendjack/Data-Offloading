@@ -15,7 +15,7 @@ public class Calculation {
 		return transferTime;
 	}
 
-	public static String nextBusArrival(int id, long size, long speed) throws ClassNotFoundException{
+	public static String timeCalculate(int id, long size, long speed) throws ClassNotFoundException{
 		// Initialize time variable to store bus time
 		long transfer = estimatedTransfer(size, speed);
 		String time = null;
