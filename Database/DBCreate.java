@@ -99,34 +99,34 @@ public class DBCreate {
  
  // 8 line
  //First bus
- statement.executeUpdate("insert into TimeTable values(82, 1, 1, '09:20:00')");
- statement.executeUpdate("insert into TimeTable values(82, 1, 2, '09:50:00')");
- statement.executeUpdate("insert into TimeTable values(82, 1, 5, '10:30:00')");
- statement.executeUpdate("insert into TimeTable values(82, 1, 10, '10:50:00')");
+ statement.executeUpdate("insert into TimeTable values(8, 1, 1, '09:20:00')");
+ statement.executeUpdate("insert into TimeTable values(8, 1, 2, '09:50:00')");
+ statement.executeUpdate("insert into TimeTable values(8, 1, 5, '10:30:00')");
+ statement.executeUpdate("insert into TimeTable values(8, 1, 10, '10:50:00')");
  
 //Second bus
-statement.executeUpdate("insert into TimeTable values(82, 2, 1, '10:00:00')");
-statement.executeUpdate("insert into TimeTable values(82, 2, 2, '10:30:00')");
-statement.executeUpdate("insert into TimeTable values(82, 2, 5, '11:10:00')");
-statement.executeUpdate("insert into TimeTable values(82, 2, 10, '11:30:00')");
+statement.executeUpdate("insert into TimeTable values(8, 2, 1, '10:00:00')");
+statement.executeUpdate("insert into TimeTable values(8, 2, 2, '10:30:00')");
+statement.executeUpdate("insert into TimeTable values(8, 2, 5, '11:10:00')");
+statement.executeUpdate("insert into TimeTable values(8, 2, 10, '11:30:00')");
 
 //Third bus
-statement.executeUpdate("insert into TimeTable values(82, 3, 1, '13:00:00')");
-statement.executeUpdate("insert into TimeTable values(82, 3, 2, '13:30:00')");
-statement.executeUpdate("insert into TimeTable values(82, 3, 5, '14:10:00')");
-statement.executeUpdate("insert into TimeTable values(82, 3, 10, '14:30:00')");
+statement.executeUpdate("insert into TimeTable values(8, 3, 1, '13:00:00')");
+statement.executeUpdate("insert into TimeTable values(8, 3, 2, '13:30:00')");
+statement.executeUpdate("insert into TimeTable values(8, 3, 5, '14:10:00')");
+statement.executeUpdate("insert into TimeTable values(8, 3, 10, '14:30:00')");
 
 //Fourth bus
-statement.executeUpdate("insert into TimeTable values(82, 4, 1, '13:40:00')");
-statement.executeUpdate("insert into TimeTable values(82, 4, 2, '14:10:00')");
-statement.executeUpdate("insert into TimeTable values(82, 4, 5, '14:50:00')");
-statement.executeUpdate("insert into TimeTable values(82, 4, 10, '15:10:00')");
+statement.executeUpdate("insert into TimeTable values(8, 4, 1, '13:40:00')");
+statement.executeUpdate("insert into TimeTable values(8, 4, 2, '14:10:00')");
+statement.executeUpdate("insert into TimeTable values(8, 4, 5, '14:50:00')");
+statement.executeUpdate("insert into TimeTable values(8, 4, 10, '15:10:00')");
 
 //Fifith bus
-statement.executeUpdate("insert into TimeTable values(82, 5, 1, '16:40:00')");
-statement.executeUpdate("insert into TimeTable values(82, 5, 2, '17:10:00')");
-statement.executeUpdate("insert into TimeTable values(82, 5, 5, '17:50:00')");
-statement.executeUpdate("insert into TimeTable values(82, 5, 10, '18:10:00')");
+statement.executeUpdate("insert into TimeTable values(8, 5, 1, '16:40:00')");
+statement.executeUpdate("insert into TimeTable values(8, 5, 2, '17:10:00')");
+statement.executeUpdate("insert into TimeTable values(8, 5, 5, '17:50:00')");
+statement.executeUpdate("insert into TimeTable values(8, 5, 10, '18:10:00')");
  
 
  // create File table (Only blank table at first)
